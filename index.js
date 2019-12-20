@@ -161,7 +161,7 @@ window.addEventListener('load', async() => {
       description:getProjectList.description,
       createdAt:new Date(getProjectList.createdAt),
       creator:getProjectList.creator,
-      goal:getProjectList.amountGoal ,
+      goal:Math.floor(getProjectList.amountGoal/1000000000000000000) ,
       total:Math.floor(getProjectList.total/1000000000000000000),
       deadline:new Date(getProjectList.deadline) 
     })
