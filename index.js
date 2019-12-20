@@ -168,7 +168,7 @@ for(let i = 1; i < contributorListLength + 1; i++){
   contributorsArr.push({
     index_counter:i,
     address:getContributorList.address,
-    amount:Math.flor(getContributorList.amount / 1000000000000000000)
+    amount:Math.floor(getContributorList.amount / 1000000000000000000)
   })
 }
 renderProjectList();  
