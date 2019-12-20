@@ -163,7 +163,7 @@ window.addEventListener('load', async() => {
       creator:getProjectList.creator,
       goal:getProjectList.amountGoal ,
       total:Math.floor(getProjectList.total/1000000000000000000),
-      deadline:getProjectList.deadline 
+      deadline:new Date(getProjectList.deadline) 
     })
 }
 
@@ -234,6 +234,8 @@ $("#getProject").on("click",".fundProj", async function(event){
   
   console.log("Just Clicked The Buy Button")
   event.preventDefault();
+  $("#loader").hide();
+  // window.location.reload(true);
 });
 
 // Navigtion Link
@@ -245,6 +247,7 @@ $("#fund_project_href").click(function(){
   $("#getContributors").hide()
   
   $("#getProject").show()
+  window.location.reload(true);
   renderProjectList() 
 })
 $("#add_project_href").click(function(){
@@ -261,6 +264,7 @@ $("#list_contributor_href").click(function(){
   $("#getProject").hide()
   $("#add_project_form").hide()
   $("#getContributors").show()
+  window.location.reload(true);
   renderContributorList() 
 })
 // click list evenclick list nav
