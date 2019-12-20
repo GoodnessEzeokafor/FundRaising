@@ -167,8 +167,8 @@ for(let i = 1; i < contributorListLength + 1; i++){
   const getContributorList = await callStatic('get_contribution_by_index', [i]);
   contributorsArr.push({
     index_counter:i,
-    address:Math.floor(getContributorList.address/ 1000000000000000000),
-    amount:getContributorList.amount 
+    address:getContributorList.address,
+    amount:Math.flor(getContributorList.amount / 1000000000000000000)
   })
 }
 renderProjectList();  
