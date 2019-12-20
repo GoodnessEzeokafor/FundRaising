@@ -114,13 +114,16 @@
     <!-- Content -->
     <div class="card-body">
       <!-- Name -->
-      <h4 class="card-title">Project Title</h4>
-      axioncisnovdfoccsmiomiosnonclc
+      <h4 class="card-title">{{title}}</h4>
+      Creator:{{creator}}  <svg data-jdenticon-value="{{creator}}" width="80" height="80">
+        {{creator}}
+    </svg>
       <hr>
       <!-- Quotation -->
-      <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
-      <p>Goal: 400 ae</p>
-      <p>Deadline: 34th December 2019</p>
+      <p><i class="fas fa-quote-left"></i>{{description}}</p>
+      <p>Goal: {{goal}} ae</p>
+      <p>Created At: {{createdAt}}</p>
+      <p>Deadline: {{deadline}}</p>
       <button id="{{id}}" class="btn btn-warning btn-block fundProj">Donate 2ae</button>
     </div>
   </div>
@@ -133,7 +136,9 @@
   <div class="card mb-3">
     <!-- Card image -->
     <div class="view overlay">
-      <img src="sd.jpg" alt="No Imge">
+      <svg data-jdenticon-value="{{address}}" width="80" height="80">
+        Fallback text or image for browsers not supporting inline svg.
+    </svg>
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -141,9 +146,9 @@
     <!-- Card content -->
     <div class="card-body">
       <!-- Title -->
-      <h4 class="card-title">Contributor 1</h4>
+      <h4 class="card-title">Doanated {{amount}}ae</h4>
       <!-- Text -->
-      <p class="card-text">axsncjnioo</p>
+      <p class="card-text">{{address}} see identicon above</p>
       </div>
   </div>
   {{/contributorsArr }}
@@ -155,6 +160,8 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
   <!-- aeternity -->
   <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>

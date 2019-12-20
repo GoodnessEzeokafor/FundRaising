@@ -190,7 +190,7 @@ $("#addButton").click(async function(){
   var new_deadline = new Date(deadline).getTime()
 
   // console.log(new Date(new_deadline))
-  const new_project = await contractCall('add_project', [title, description, new_deadline,parseInt(goal,10)],0);
+  const new_project = await contractCall('add_project', [title, description, new_deadline,parseInt(goal*1000000000000000000,10)],0);
 console.log("##########START########")
 console.log("New Project:", new_project)
 console.log("New Project Title:",new_project.title)
