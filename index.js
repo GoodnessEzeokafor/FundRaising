@@ -207,27 +207,28 @@ console.log("#########END###########")
 })
  
 // Fund Project
-// // Buy A Product
-// $("#getEvent").on("click",".buyBtn", async function(event){
-//   $("#loader").show();
+$("#getProject").on("click",".fundProj", async function(event){
+  $("#loader").show();
 
-//   const dataIndex = event.target.id
-//   console.log(typeof dataIndex)
-//   const eventListArrPrice = eventListArr[dataIndex - 1].price
-//   console.log("Price of product",eventListArrPrice)
-//   const purchased_event = await contractCall('buy_ticket', [dataIndex],parseInt(eventListArrPrice, 10));
-//   console.log("Purchase:", purchased_event)
-  
-//   // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
-//   // const value = $(".buyBtn")[foundIndex] ;
+  console.log("Fund Project Clicked")
+  const dataIndex = event.target.id
 
-//   console.log("-----------------")
-//   console.log("Data Index:", dataIndex)
-//   console.log("--------------------------")
+  console.log(typeof dataIndex)
+  // const projectListArrPrice = projectArr[dataIndex - 1].price
+  console.log("Donate Just 2ae")
+  const fund_project = await contractCall('contribute', [dataIndex],2*1000000000000000000);
+  // console.log("Purchase:", purchased_event)
   
-//   console.log("Just Clicked The Buy Button")
-//   event.preventDefault();
-// });
+  // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
+  // const value = $(".buyBtn")[foundIndex] ;
+
+  console.log("-----------------")
+  console.log("Data Index:", dataIndex)
+  console.log("--------------------------")
+  
+  console.log("Just Clicked The Buy Button")
+  event.preventDefault();
+});
 
 // Navigtion Link
 $("#fund_project_href").click(function(){
