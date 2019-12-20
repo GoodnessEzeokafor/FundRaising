@@ -85,6 +85,7 @@ payable contract Project=
 const contractAddress ='ct_fFFuLsiDbv81i7u9FNwo6o6NBevjRupWxheoLo6U9t3Bk7YGt'
 
 var client = null // client defuault null
+user_address =null // clienr user address default null
 var projectArr = [] // empty projects array
 var contributorsArr = [] //empty contributors array
 var projectListLength = 0 // empty product list lenghth
@@ -114,7 +115,7 @@ function renderProjectList(){
   let template = $('#template').html();
   Mustache.parse(template);
   var rendered = Mustache.render(template, {projectArr});
-  $("#getProjects").html(rendered); // id to render your temlplate
+  $("#getProject").html(rendered); // id to render your temlplate
   console.log("Project Template Display")
 }
 
@@ -135,8 +136,9 @@ window.addEventListener('load', async() => {
   $("#loader").show();
 
   client = await Ae.Aepp();
+  user_address = await client.address()
   console.log("Client:",client)
-  console.log("Client Address", client.address());
+  console.log("Client Address", user_address);
   projectListLength = await callStatic('getProjectLength',[]);
   contributorListLength = await callStatic('getContributionLength',[])
   // projectListLength = await callStatic('getFileLength',[]);
