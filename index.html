@@ -10,6 +10,9 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async>
+  </script>
+  
   <script src="identicon.js"></script>
 
 </head>
@@ -117,10 +120,10 @@
     <div class="card-body">
       <!-- Name -->
       <h4 class="card-title">{{title}}</h4>
-      Creator:{{creator}} <img width=50 height=50 src="data:image/svg+xml;base64,' + {{new Identicon(creator).toString()}} + '">'  
-      <!-- <svg data-jdenticon-hash="{{creator}}" width="80" height="80">
+      Creator:{{creator}}  
+      <svg data-jdenticon-hash="{{creator}}" width="80" height="80">
         {{creator}}
-    </svg> -->
+    </svg>
       <hr>
       <!-- Quotation -->
       <p><i class="fas fa-quote-left"></i>{{description}}</p>
@@ -139,11 +142,10 @@
   <div class="card mb-3">
     <!-- Card image -->
     <div class="view overlay">
-      <!-- <svg data-jdenticon-hash="{{address}}" width="80" height="80">
+      <svg data-jdenticon-hash="{{address}}" width="80" height="80">
         Fallback text or image for browsers not supporting inline svg.
     </svg>
-     -->
-     <img width=50 height=50 src="data:image/svg+xml;base64,' + {{new Identicon(address).toString()}} + '">'
+    
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -165,8 +167,7 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jdenticon@2.2.0" async>
-  </script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
   <!-- aeternity -->
   <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
