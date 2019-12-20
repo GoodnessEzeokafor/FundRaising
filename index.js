@@ -7,7 +7,8 @@ payable contract Project=
     description:string,
     createdAt:int,
     deadline:int,
-    amountGoal:int}
+    amountGoal:int,
+    total:int }
   record contribution={
       id:int,
       contributors : address,
@@ -44,7 +45,8 @@ payable contract Project=
                         createdAt=Chain.timestamp,
                         creator = Call.caller,
                         deadline=_deadline,
-                        amountGoal=_amountGoal}
+                        amountGoal=_amountGoal,
+                        total=0}
     let index = getProjectLength() + 1
     put(state{projects[index]=stored_project,index_counter=index})
 
@@ -70,6 +72,7 @@ payable contract Project=
     require(Call.value > 0, "Donate More Than Zero Ae")
     let index = getContributionLength() + 1
     let total_balance = getCurrentBalance() + Call.value
+    let new_project_total = project.total + Call.value
     let stored_contribution = {id=getContributionLength() + 1,
                         contributors=Call.caller,
                         amount=Call.value}
@@ -78,11 +81,12 @@ payable contract Project=
   payable stateful entrypoint payout(_id:int) = 
     let project = get_project_by_index(_id)
     let total_balance = getCurrentBalance()
-    require(total_balance > project.amountGoal,"Goal Not Met")
+    require(project.total >= project.amountGoal,"Goal Not Met")
+    require(Call.caller == project.creator, "Must Be The Project Creator")
     Chain.spend(project.creator, total_balance)
 
 `
-const contractAddress ='ct_fFFuLsiDbv81i7u9FNwo6o6NBevjRupWxheoLo6U9t3Bk7YGt'
+const contractAddress ='ct_3TvXG16WGnDZGACLiErLMs9ekdTQXXsSwkeDmtcdSUK8hNEdz'
 
 var client = null // client defuault null
 user_address =null // clienr user address default null
@@ -158,6 +162,7 @@ window.addEventListener('load', async() => {
       createdAt:new Date(getProjectList.createdAt),
       creator:getProjectList.creator,
       goal:getProjectList.amountGoal ,
+      total:Math.floor(getProjectList.total/1000000000000000000),
       deadline:getProjectList.deadline 
     })
 }
@@ -167,7 +172,7 @@ for(let i = 1; i < contributorListLength + 1; i++){
   const getContributorList = await callStatic('get_contribution_by_index', [i]);
   contributorsArr.push({
     index_counter:i,
-    address:getContributorList.address,
+    address:getContributorList.contributors,
     amount:Math.floor(getContributorList.amount / 1000000000000000000)
   })
 }

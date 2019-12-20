@@ -128,6 +128,7 @@
       <!-- Quotation -->
       <p><i class="fas fa-quote-left"></i>{{description}}</p>
       <p>Goal: {{goal}} ae</p>
+      <p>Total Amount Raised: {{total}}ae</p>
       <p>Created At: {{createdAt}}</p>
       <p>Deadline: {{deadline}}</p>
       <button id="{{id}}" class="btn btn-warning btn-block fundProj">Donate 2ae</button>
@@ -145,7 +146,7 @@
       <svg data-jdenticon-hash="{{address}}" width="80" height="80">
         Fallback text or image for browsers not supporting inline svg.
     </svg>
-    
+    <h1>{}</h1>
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -153,7 +154,7 @@
     <!-- Card content -->
     <div class="card-body">
       <!-- Title -->
-      <h4 class="card-title">Doanated {{amount}}ae</h4>
+      <h4 class="card-title">{{address}} Donated {{amount}}ae</h4>
       <!-- Text -->
       <p class="card-text">{{address}} see identicon above</p>
       </div>
