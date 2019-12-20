@@ -137,7 +137,6 @@ window.addEventListener('load', async() => {
 
   client = await Ae.Aepp();
   user_address = await client.address()
-  var identicon = new Identicon(user_address, 420).toString();
 
   console.log("Client:",client)
   console.log("Client Address", user_address);

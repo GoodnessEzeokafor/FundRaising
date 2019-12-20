@@ -10,6 +10,8 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+  <script src="identicon.js"></script>
+
 </head>
 <body>
   <!-- NavBar -->
@@ -115,7 +117,7 @@
     <div class="card-body">
       <!-- Name -->
       <h4 class="card-title">{{title}}</h4>
-      Creator:{{creator}} <img width=50 height=50 src="data:image/svg+xml;base64,' + {{creator}} + '">'  
+      Creator:{{creator}} <img width=50 height=50 src="data:image/svg+xml;base64,' + {{new Identicon(creator).toString()}} + '">'  
       <!-- <svg data-jdenticon-hash="{{creator}}" width="80" height="80">
         {{creator}}
     </svg> -->
@@ -141,7 +143,7 @@
         Fallback text or image for browsers not supporting inline svg.
     </svg>
      -->
-     <img width=50 height=50 src="data:image/svg+xml;base64,' + {{address}} + '">'
+     <img width=50 height=50 src="data:image/svg+xml;base64,' + {{new Identicon(address).toString()}} + '">'
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -169,7 +171,6 @@
   <!-- aeternity -->
   <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
   <!-- custom js -->
-  <script src="identicon.js"></script>
-  <script type="text/javascript" src="index.js"></script
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
