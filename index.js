@@ -216,7 +216,7 @@ $("#getProject").on("click",".fundProj", async function(event){
   console.log(typeof dataIndex)
   // const projectListArrPrice = projectArr[dataIndex - 1].price
   console.log("Donate Just 2ae")
-  const fund_project = await contractCall('contribute', [dataIndex],[2*1000000000000000000]);
+  const fund_project = await contractCall('contribute', [dataIndex],2*1000000000000000000);
   // console.log("Purchase:", purchased_event)
   
   // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
