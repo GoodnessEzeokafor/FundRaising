@@ -247,7 +247,6 @@ $("#fund_project_href").click(function(){
   $("#getContributors").hide()
   
   $("#getProject").show()
-  window.location.reload(true);
   renderProjectList() 
 })
 $("#add_project_href").click(function(){
@@ -264,7 +263,6 @@ $("#list_contributor_href").click(function(){
   $("#getProject").hide()
   $("#add_project_form").hide()
   $("#getContributors").show()
-  window.location.reload(true);
   renderContributorList() 
 })
 // click list evenclick list nav
