@@ -220,16 +220,42 @@ $("#getProject").on("click",".fundProj", async function(event){
   const dataIndex = event.target.id
 
   console.log(typeof dataIndex)
-  // const projectListArrPrice = projectArr[dataIndex - 1].price
   console.log("Donate Just 2ae")
   const fund_project = await contractCall('contribute', [dataIndex],2*1000000000000000000);
-  // console.log("Purchase:", purchased_event)
-  
-  // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
-  // const value = $(".buyBtn")[foundIndex] ;
 
   console.log("-----------------")
   console.log("Data Index:", dataIndex)
+  console.log("--------------------------")
+  
+  console.log("Just Clicked The Buy Button")
+  event.preventDefault();
+  $("#loader").hide();
+  // window.location.reload(true);
+});
+
+
+//cashout
+
+/*
+########### CASH OUT  #################
+
+
+*/
+
+$("#getProject").on("click",".payout", async function(event){
+  $("#loader").show();
+
+  console.log("Payout Button Clicked Clicked")
+  const dataIndex = event.target.id
+
+  console.log(typeof dataIndex)
+  console.log("Cash Out")
+  console.log("Only Project Creator Can... Please")
+  const cashout = await contractCall('payout', [dataIndex],0);
+
+  console.log("-----------------")
+  console.log("Data Index:", dataIndex)
+  console.log("Cash Out:",cashout)
   console.log("--------------------------")
   
   console.log("Just Clicked The Buy Button")

@@ -132,6 +132,7 @@
       <p>Created At: {{createdAt}}</p>
       <p>Deadline: {{deadline}}</p>
       <button id="{{id}}" class="btn btn-warning btn-block fundProj">Donate 2ae</button>
+      <button id="{{id}}" class="btn btn-danger btn-sm payout">Payout(Only Project Creator can Pay Out)</button>
     </div>
   </div>
   {{/projectArr }}
@@ -143,10 +144,6 @@
   <div class="card mb-3">
     <!-- Card image -->
     <div class="view overlay">
-      <svg data-jdenticon-hash="{{address}}" width="80" height="80">
-        Fallback text or image for browsers not supporting inline svg.
-    </svg>
-    <h1>{}</h1>
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
