@@ -205,6 +205,28 @@ console.log("#########END###########")
 })
  
 // Fund Project
+// // Buy A Product
+// $("#getEvent").on("click",".buyBtn", async function(event){
+//   $("#loader").show();
+
+//   const dataIndex = event.target.id
+//   console.log(typeof dataIndex)
+//   const eventListArrPrice = eventListArr[dataIndex - 1].price
+//   console.log("Price of product",eventListArrPrice)
+//   const purchased_event = await contractCall('buy_ticket', [dataIndex],parseInt(eventListArrPrice, 10));
+//   console.log("Purchase:", purchased_event)
+  
+//   // const foundIndex = productListArr.findIndex(product => product.id === dataIndex)
+//   // const value = $(".buyBtn")[foundIndex] ;
+
+//   console.log("-----------------")
+//   console.log("Data Index:", dataIndex)
+//   console.log("--------------------------")
+  
+//   console.log("Just Clicked The Buy Button")
+//   event.preventDefault();
+// });
+
 // Navigtion Link
 $("#fund_project_href").click(function(){
   console.log("Fund Project Button Clicked .....");
