@@ -76,7 +76,15 @@ payable contract Project=
     let stored_contribution = {id=getContributionLength() + 1,
                         contributors=Call.caller,
                         amount=Call.value}
-    put(state{contributions[index]=stored_contribution, index_contribution_counter=index,currentBalance = total_balance})
+    let updated_project = {id=project.id,
+                        title=project.title,
+                        description=project.description, 
+                        createdAt=project.createdAt,
+                        creator = project_owner,
+                        deadline=project.deadline,
+                        amountGoal=project.amountGoal,
+                        total=new_project_total}
+    put(state{projects[_id]=updated_project,contributions[index]=stored_contribution, index_contribution_counter=index,currentBalance = total_balance})
     
   payable stateful entrypoint payout(_id:int) = 
     let project = get_project_by_index(_id)
@@ -86,7 +94,7 @@ payable contract Project=
     Chain.spend(project.creator, total_balance)
 
 `
-const contractAddress ='ct_3TvXG16WGnDZGACLiErLMs9ekdTQXXsSwkeDmtcdSUK8hNEdz'
+const contractAddress ='ct_279z1kht4CDbZgZxPruTPC21Dxy2JTKXB8kzCoGBXzpUvXQePP'
 
 var client = null // client defuault null
 user_address =null // clienr user address default null
