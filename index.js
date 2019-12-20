@@ -137,6 +137,8 @@ window.addEventListener('load', async() => {
 
   client = await Ae.Aepp();
   user_address = await client.address()
+  var identicon = new Identicon(user_address, 420).toString();
+
   console.log("Client:",client)
   console.log("Client Address", user_address);
   projectListLength = await callStatic('getProjectLength',[]);
@@ -156,7 +158,7 @@ window.addEventListener('load', async() => {
       description:getProjectList.description,
       createdAt:new Date(getProjectList.createdAt),
       creator:getProjectList.creator,
-      goal:getProjectList.amountGoal,
+      goal:getProjectList.amountGoal / 1000000000000000000,
       deadline:getProjectList.deadline 
     })
 }

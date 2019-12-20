@@ -115,9 +115,10 @@
     <div class="card-body">
       <!-- Name -->
       <h4 class="card-title">{{title}}</h4>
-      Creator:{{creator}}  <svg data-jdenticon-hash="{{creator}}" width="80" height="80">
+      Creator:{{creator}} <img width=50 height=50 src="data:image/svg+xml;base64,' + {{creator}} + '">'  
+      <!-- <svg data-jdenticon-hash="{{creator}}" width="80" height="80">
         {{creator}}
-    </svg>
+    </svg> -->
       <hr>
       <!-- Quotation -->
       <p><i class="fas fa-quote-left"></i>{{description}}</p>
@@ -136,9 +137,11 @@
   <div class="card mb-3">
     <!-- Card image -->
     <div class="view overlay">
-      <svg data-jdenticon-hash="{{address}}" width="80" height="80">
+      <!-- <svg data-jdenticon-hash="{{address}}" width="80" height="80">
         Fallback text or image for browsers not supporting inline svg.
     </svg>
+     -->
+     <img width=50 height=50 src="data:image/svg+xml;base64,' + {{address}} + '">'
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -166,6 +169,7 @@
   <!-- aeternity -->
   <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
   <!-- custom js -->
+  <script src="identicon.js"></script>
   <script type="text/javascript" src="index.js"></script
 </body>
 </html>
