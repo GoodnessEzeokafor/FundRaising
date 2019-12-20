@@ -1,0 +1,164 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FundAe</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NavBar -->
+  <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
+  <a class="navbar-brand" href="#">FundAe</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  id="fund_project_href">Fund Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  id="add_project_href">Add Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  id="list_contributor_href">See Contributors</a>
+      </li>  
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item avatar">
+        <a class="nav-link p-0" href="#">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+            alt="avatar image" height="35">
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+  <!-- EndNavbar -->
+
+  <!-- main section -->
+    <!-- form section -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <!-- Crete FOrm -->
+        <div class="text-center border border-light p-5" id="add_project_form">
+          <p class="h4 mb-4">Create Project</p>
+          <p>Start Project And Get Others To Fund It </p>
+          
+          <!-- Name -->
+          <input type="text" id="title" class="form-control mb-4" placeholder="Enter Project Title">
+            <!-- Description -->
+          <div class="form-group">
+              <textarea id="description" class="form-control rounded-0" rows="3" placeholder="Project Description"></textarea>
+          </div>
+          <input type="text" id="goal" class="form-control mb-4" placeholder="Enter Total Amount To Raise(Ae)">
+
+          <div class="md-form">
+                  <input  type="date" id="deadline" class="form-control datepicker">
+                  <label for="date-picker-example">Funding Deadline</label>
+            </div>
+
+          <!-- Sign in button -->
+          <button class="btn btn-warning btn-block" type="button" id="addButton">Create Project</button>
+      </div>
+        <!-- End Crete Form -->
+      <div id="getContributors"  class="mt-4" style="margin-top:20px;">
+        <!-- Contributors-->
+        <!-- Endcontribution -->
+      </div>
+    </div>
+    <!-- endform section -->
+  </div>
+</div>
+    <!-- list project section -->
+      <!-- Card -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 col-sm-12 mt-3" id="getProject">
+            <!-- Card -->
+            <!-- Card -->
+          </div>
+        </div>
+      </div>
+
+    <!-- end list project section -->
+    
+  <!-- End main section -->
+  
+
+<!-- mustche -->
+<script id="template" type="x-tmpl-mustache">
+  {{#projectArr}}
+  <div class="card testimonial-card">
+    <!-- Background color -->
+    <div class="card-up indigo lighten-1"></div>
+    <!-- Avatar -->
+    <div class="avatar mx-auto white">
+      <img width="250" height="250" src="img/432436.png" class="rounded-circle" alt="woman avatar">
+    </div>
+    <!-- Content -->
+    <div class="card-body">
+      <!-- Name -->
+      <h4 class="card-title">Project Title</h4>
+      axioncisnovdfoccsmiomiosnonclc
+      <hr>
+      <!-- Quotation -->
+      <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci</p>
+      <p>Goal: 400 ae</p>
+      <p>Deadline: 34th December 2019</p>
+      <button class="btn btn-warning btn-block">FUND PROJECT</button>
+    </div>
+  </div>
+  {{/projectArr }}
+</script>
+
+
+<script id="contributor" type="x-tmpl-mustache">
+  {{#contributor}}
+  <div class="card mb-3">
+    <!-- Card image -->
+    <div class="view overlay">
+      <img src="sd.jpg" alt="No Imge">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <!-- Card content -->
+    <div class="card-body">
+      <!-- Title -->
+      <h4 class="card-title">Contributor 1</h4>
+      <!-- Text -->
+      <p class="card-text">axsncjnioo</p>
+      </div>
+  </div>
+  {{/contributor }}
+</script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+  <!-- aeternity -->
+  <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="index.js"></script
+</body>
+</html>

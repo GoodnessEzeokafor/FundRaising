@@ -1,0 +1,29 @@
+/*
+State 
+    - currrnetBalance
+    - indexCounter
+    - projects
+    - expired
+    - Fundraising
+    - sucessful
+    - contribution(address,id)
+
+Project Record
+    - id
+    - title
+    - creator
+    - description
+    - amountGoal
+    - deadline
+    - creted
+
+Methods
+    Contribute
+        - require Call.caller is not creator
+        - require value is not less than zero
+        - map address to contribution
+        - increment current Balance
+    CreateProject
+    checkIfFundingCompleteOrExpired
+    - 
+*/
