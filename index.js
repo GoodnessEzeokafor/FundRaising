@@ -136,7 +136,7 @@ window.addEventListener('load', async() => {
 
   client = await Ae.Aepp();
   console.log("Client:",client)
-  console.log("Client Address", client.address);
+  console.log("Client Address", client.address());
   projectListLength = await callStatic('getProjectLength',[]);
   contributorListLength = await callStatic('getContributionLength',[])
   // projectListLength = await callStatic('getFileLength',[]);
@@ -188,7 +188,7 @@ $("#addButton").click(async function(){
   var new_deadline = new Date(deadline).getTime()
 
   // console.log(new Date(new_deadline))
-  const new_event = await contractCall('add_event', [title, description, new_deadline,goal],0);
+  const new_event = await contractCall('add_project', [title, description, new_deadline,parseInt(goal,10)],0);
 
   // // clear
   $("#title").val("");
