@@ -194,6 +194,7 @@ $("#loader").hide();
 //click the Create Button
 $("#addButton").click(async function(){
   console.log("Button Clicked....");
+  $("#loader").show();
 
   var title = ($("#title").val());
   var description = ($("#description").val());
@@ -218,6 +219,8 @@ console.log("#########END###########")
   $("#description").val("");
   $("#deadline").val("");
   $("#goal").val("");
+  $("#loader").hide();
+
 })
  
 // Fund Project
